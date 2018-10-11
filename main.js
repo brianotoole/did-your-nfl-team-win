@@ -34,7 +34,7 @@ init = () => {
     if (searchInput.value === '') {
       resultsEl.innerHTML = 'Enter an NFL team name.';
     } else {
-      calcScore(searchInput.value);
+      calcScore(searchInput.value.toLowerCase());
     }
   });
 
@@ -42,8 +42,8 @@ init = () => {
   // return a result
   calcScore = (team) => {
     for (let i = 0; i < games.length; i++) {
-      let homeTeam = games[i].hnn;
-      let awayTeam = games[i].vnn;
+      let homeTeam = games[i].hnn.toLowerCase();
+      let awayTeam = games[i].vnn.toLowerCase();
       let homeTeamScore = games[i].hs;
       let awayTeamScore = games[i].vs;
 

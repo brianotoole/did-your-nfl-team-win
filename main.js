@@ -29,6 +29,7 @@ init = () => {
   let searchBtn = document.getElementById("btn-search");
   let resultsEl = document.getElementById("results");
 
+
   // onclick call calcScore() and pass the searched input's value (team name)
   searchBtn.addEventListener("click", function() {
     if (searchInput.value === '') {
@@ -37,6 +38,24 @@ init = () => {
       calcScore(searchInput.value.toLowerCase());
     }
   });
+
+  // same thing, but for the enter key
+  searchInput.addEventListener("keyup", function(e) {
+    e.preventDefault();
+    if (event.keyCode === 13) {
+      searchBtn.click();
+      testInput();
+    }
+  });
+
+  // test the search input's value; if not empty, run calcScore()
+  testInput = () => {
+    if (searchInput.value === '') {
+      resultsEl.innerHTML = 'Enter an NFL team name.';
+    } else {
+      calcScore(searchInput.value.toLowerCase());
+    }
+  }
 
   // loop through games data, set home/away variables to determine winner/loser/tie
   // return a result

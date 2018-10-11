@@ -1,6 +1,7 @@
 
 const scoresUrl = "//www.nfl.com/liveupdate/scorestrip/ss.json"; //./test.json for debugging
 let games;
+let result;
 
 // use fetch to retrieve scores data from url
 // format as JSON using response.json() and run init()
@@ -21,24 +22,25 @@ fetch(scoresUrl).then(function(response) {
   }
 });
 
-// set up logic, declares variables, contain functions
+// set up, declares variables, contain functions
 init = () => {
   // grab the UI elements to manipulate
   let searchInput = document.getElementById("search");
   let searchBtn = document.getElementById("btn-search");
   let resultsEl = document.getElementById("results");
-  let noSearch = "";
 
-  // on click invoke calcScore() and pass the searched
-  // input's value
+  // onclick call calcScore() and pass the searched input's value (team name)
   searchBtn.addEventListener("click", function() {
-    calcScore(searchInput.value);
+    if (searchInput.value === '') {
+      resultsEl.innerHTML = 'Enter an NFL team name.';
+    } else {
+      calcScore(searchInput.value);
+    }
   });
 
   // loop through games data, set home/away variables to determine winner/loser/tie
   // return a result
   calcScore = (team) => {
-    let result;
     for (let i = 0; i < games.length; i++) {
       let homeTeam = games[i].hnn;
       let awayTeam = games[i].vnn;

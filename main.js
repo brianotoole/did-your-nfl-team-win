@@ -51,7 +51,7 @@ init = () => {
         result = `The ${team} won.`;
       } else if (team === awayTeam && awayTeamScore < homeTeamScore) {
         result = `The ${team} lost.`;
-      } else if (team === awayTeam || (team === awayTeam && awayTeamScore === homeTeamScore)) {
+      } else if (team === awayTeam && awayTeamScore === homeTeamScore || team === homeTeam && homeTeamScore == awayTeamScore) {
         result = `The ${team} tied.`;
       }
       resultsEl.innerHTML = result;

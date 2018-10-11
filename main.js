@@ -32,17 +32,14 @@ init = () => {
 
   // onclick call calcScore() and pass the searched input's value (team name)
   searchBtn.addEventListener("click", function() {
-    if (searchInput.value === '') {
-      resultsEl.innerHTML = 'Enter an NFL team name.';
-    } else {
-      calcScore(searchInput.value.toLowerCase());
-    }
+    testInput();
   });
 
   // same thing, but for the enter key
   searchInput.addEventListener("keyup", function(e) {
     e.preventDefault();
     if (event.keyCode === 13) {
+      // simulate click
       searchBtn.click();
       testInput();
     }

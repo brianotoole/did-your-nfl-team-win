@@ -1,8 +1,9 @@
-
 const scoresUrl = "//www.nfl.com/liveupdate/scorestrip/ss.json";
-//import './test-data.json';
+// './test-data.json';
+
 let games;
 let result;
+
 // hide the loading el
 let loader = document.getElementById("loading");
 loader.style.display = 'none';
@@ -37,20 +38,38 @@ init = () => {
   // return a result
   calcScore = (team) => {
     for (let i = 0; i < games.length; i++) {
-      let homeTeam = games[i].hnn.toLowerCase();
-      let awayTeam = games[i].vnn.toLowerCase();
       let homeTeamScore = games[i].hs;
       let awayTeamScore = games[i].vs;
+      let homeTeam = games[i].hnn.toLowerCase();
+      let awayTeam = games[i].vnn.toLowerCase();
+      let isHomeTeam;
+      let winnerHome;
+      let tied;
 
-      if (team === homeTeam && homeTeamScore > awayTeamScore) {
+      if (team === homeTeam) {
+        isHomeTeam = true;
+        winner = homeTeamScore > awayTeamScore;
+        tied = homeTeamScore === awayTeamScore;
+      } else if (team === awayTeam) {
+        isHomeTeam = false;
+        winner = homeTeamScore < awayTeamScore;
+        tied = homeTeamScore === awayTeamScore;
+      }
+
+      if (isHomeTeam === true && winner === true) {
         result = `The ${team} won.`;
-      } else if (team === awayTeam && awayTeamScore < homeTeamScore) {
+      } else if (isHomeTeam === true && winner === false) {
         result = `The ${team} lost.`;
-      } else if (team === awayTeam && awayTeamScore === homeTeamScore || team === homeTeam && homeTeamScore == awayTeamScore) {
+      } else if (isHomeTeam === false && winner === true) {
+        result = `The ${team} won.`;
+      } else if (isHomeTeam === false && winner === false) {
+        result = `The ${team} lost.`;
+      } else if (isHomeTeam === true && tied === true && isHomeTeam === false && tied === true) {
         result = `The ${team} tied.`;
       }
       resultsEl.innerHTML = result;
     }
+
   };
 
   // test the search input's value; if not empty, run calcScore()

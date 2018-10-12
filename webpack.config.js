@@ -7,14 +7,16 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 module.exports = {
   entry: './src/js/index.js',
   output: {
-    filename: 'bundle.js',
+    filename: 'js/bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
       {
         test: /\.(css|sass|scss)$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader', 'postcss-loader', 'sass-loader'],
+        })
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -36,7 +38,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'dist/css/style.css',
+      filename: 'css/style.css',
       allChunks: true,
     }),
     new CleanWebpackPlugin(['dist']),

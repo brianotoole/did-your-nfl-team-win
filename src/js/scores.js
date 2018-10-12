@@ -3,6 +3,9 @@ const scoresUrl = "//www.nfl.com/liveupdate/scorestrip/ss.json";
 //import './test-data.json';
 let games;
 let result;
+// hide the loading el
+let loader = document.getElementById("loading");
+loader.style.display = 'none';
 
 // use fetch to retrieve scores data from url
 // format as JSON using response.json() and run init()
@@ -56,9 +59,18 @@ init = () => {
     if (searchInput.value === '') {
       resultsEl.innerHTML = 'Enter an NFL team name.';
     } else {
-      calcScore(searchInput.value.toLowerCase());
+      // show the loading el
+      loader.style.display = 'block';
+      resultsEl.style.display = 'none';
+      setTimeout(function(){
+        // after timeout, hide the loading el
+        loader.style.display = 'none';
+        resultsEl.style.display = 'block';
+        // afer timeout, run calcScore() on search input value
+        calcScore(searchInput.value.toLowerCase());
+      }, 1500);
     }
-  }
+  };
 
   // onclick call calcScore() and pass the searched input's value (team name)
   searchBtn.addEventListener("click", function() {

@@ -48,3 +48,12 @@
     font-size: 1.2rem;
   }
 }
+
+#results {
+  margin: rem(30) auto;
+  font-size: 1rem;
+  text-transform: capitalize;
+  @media (min-width: $bp_md) {
+    font-size: 1.2rem;
+  }
+}

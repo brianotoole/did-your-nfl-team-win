@@ -518,6 +518,14 @@ textarea {
     .loading-text {
       font-size: 1.2rem; } }
 
+#results {
+  margin: 1.875rem auto;
+  font-size: 1rem;
+  text-transform: capitalize; }
+  @media (min-width: 800px) {
+    #results {
+      font-size: 1.2rem; } }
+
 /*********************************************************
     Animations
 *********************************************************/

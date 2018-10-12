@@ -9,11 +9,18 @@
   </head>
   <body>
 
-    <label for="search">Search by NFL team name:</label>
-    <input id="search" type="text">
-    <button id="btn-search">Search</button>
+    <section class="hero hero--full-height hero--bg-gradient">
 
-    <div id="results"></div>
+      <div class="hero__content wrapper">
+        <h1 class="hero__title">Did Your NFL Team Win?</h1>
+        <p class="hero__subtitle">Check if your NFL team won. Enter your team's
+          name below:</p>
+        <input id="search" type="text" placeholder="Enter an NFL Team Name. Ex - 'Jaguars'">
+        <a id="btn-search" class="btn btn--block">Search</a>
+        <div id="results"></div>
+      </div><!-- /.hero__content -->
+
+    </section><!-- /.hero -->
 
     <script src="./dist/js/bundle.js"></script>
 

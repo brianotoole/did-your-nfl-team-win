@@ -11,7 +11,8 @@
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s linear;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     text-decoration: none;
     color: $color-white;
     background-color: $color-primary-dark;
@@ -19,7 +20,8 @@
 
   &--secondary {
     background-color: $color-secondary;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background-color: $color-secondary-dark;
     }
   }
@@ -28,7 +30,8 @@
     color: $color-white;
     background-color: transparent;
     border: 2px solid $color-primary;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background-color: $color-primary;
       border-color: $color-primary-dark;
     }
@@ -44,4 +47,8 @@
     cursor: not-allowed;
   }
 
+  &--block {
+    display: block;
+    margin: 0 auto;
+  }
 }

@@ -1,2 +1,22 @@
+/*********************************************************
+    Main Styles Entry Point
+*********************************************************/
 
-@import './base.scss';
+// BASE
+@import "./base/reset";
+@import "./base/mixins";
+@import "./base/variables";
+@import "./base/fonts";
+@import "./base/global";
+@import "./base/typography";
+
+// LAYOUTS
+@import "./layouts/grid";
+@import "./layouts/buttons";
+
+// MODULES
+@import "./modules/form";
+
+// STATES
+@import "./states/animations";
+@import "./states/utilities";

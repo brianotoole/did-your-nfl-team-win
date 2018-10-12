@@ -1,5 +1,6 @@
 
-const scoresUrl = "//www.nfl.com/liveupdate/scorestrip/ss.json"; //./test.json for debugging
+const scoresUrl = "//www.nfl.com/liveupdate/scorestrip/ss.json";
+//import './test-data.json';
 let games;
 let result;
 

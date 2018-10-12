@@ -2,6 +2,3 @@
 require("../scss/main.scss");
 
 import './scores.js';
-
-// test json data
-//import './test-data.json';

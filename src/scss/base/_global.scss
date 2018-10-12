@@ -1,0 +1,74 @@
+/*********************************************************
+    Global Page Rules
+*********************************************************/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: #fff;
+  color: $color-body;
+  font-family: $font-body;
+  font-size: $font-base-font-size;
+  font-weight: 300;
+  line-height: $font-base-line-height;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: $color-primary;
+  transition: 0.2s color ease-out;
+  &:hover {
+    color: $color-primary-dark;
+  }
+}
+
+.wrapper {
+  max-width: 1230px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow: hidden;
+
+  &--narrow {
+    max-width: 976px;
+  }
+
+}
+
+.page-section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  
+  &--primary {
+    color: white;
+    background-color: $color-primary;
+  }
+
+  &--secondary {
+    color: white;
+    background-color: $color-secondary;
+  }
+
+  &--white {
+    color: black;
+    background-color: $color-white;
+  }
+
+  &--black {
+    color: white;
+    background-color: black;
+  }
+
+}

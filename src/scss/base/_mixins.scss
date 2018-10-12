@@ -1,0 +1,99 @@
+/*********************************************************
+    Mixins
+*********************************************************/
+
+@function power($number, $power) {
+  $exponent: 1;
+
+  @if $power > 0 {
+      @for $i from 1 through $power {
+          $exponent: $exponent * $number;
+      }
+  } @else {
+      @for $i from $power to 0 {
+          $exponent: $exponent / $number;
+      }
+  }
+
+  @return $exponent;
+}
+
+/*********************************************************
+  Font Scale
+  Usage: font-size: font-scale(3)
+*********************************************************/
+@function font-scale($x) {  
+@return power($font-ratio, $x) * $font-base-font-size;
+};
+
+
+/*********************************************************
+  Media Query Breakpoints
+  Mobile first approach
+  Default rules are set below sm-sized screens
+  Usage:
+  @include bp_md {
+    width: 50%;
+  }
+*********************************************************/
+
+// above bp_sm
+@mixin bp_sm {
+@media (min-width: #{$bp_sm}) {
+  @content;
+}
+}
+
+// above bp_md
+@mixin bp_md {
+@media (min-width: #{$bp_md}) {
+  @content;
+}
+}
+
+// above bp_lg
+@mixin bp_lg {
+@media (min-width: #{$bp_lg}) {
+  @content;
+}
+}
+
+
+/*********************************************************
+  Px to Rem Conversion
+  Usage: .class {font-size: rem(18)}
+*********************************************************/
+$baseFontSize : 16; 
+@function rem($pixels, $context: $baseFontSize) {
+@if (unitless($pixels)) {
+  $pixels: $pixels * 1px;
+}
+@if (unitless($context)) {
+  $context: $context * 1px;
+}
+@return $pixels / $context * 1rem;
+}
+
+
+/*********************************************************
+  Clearfix
+  Usage: @include clearFix()
+*********************************************************/
+@mixin clearFix() {
+&:before,
+&:after {
+  content: " "; 
+  display: table; 
+}
+
+&:after {
+  display: block;
+  clear: both;
+  height: 1px;
+  margin-top: -1px;
+  visibility: hidden;
+}
+& {
+  *zoom: 1;
+}
+}

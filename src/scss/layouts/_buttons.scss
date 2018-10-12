@@ -1,0 +1,47 @@
+/*********************************************************
+    Buttons
+*********************************************************/
+.btn {
+  display: inline-block;
+  padding: rem(8) rem(10);
+  font-size: font-scale(0);
+  color: $color-white;
+  background-color: $color-primary;
+  border-radius: rem(2);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  &:hover, &:focus {
+    text-decoration: none;
+    color: $color-white;
+    background-color: $color-primary-dark;
+  }
+
+  &--secondary {
+    background-color: $color-secondary;
+    &:hover, &:focus {
+      background-color: $color-secondary-dark;
+    }
+  }
+
+  &--transparent {
+    color: $color-white;
+    background-color: transparent;
+    border: 2px solid $color-primary;
+    &:hover, &:focus {
+      background-color: $color-primary;
+      border-color: $color-primary-dark;
+    }
+  }
+
+  &--large {
+    padding: rem(15) rem(25);
+    font-size: rem(18);
+  }
+
+  &--disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+
+}

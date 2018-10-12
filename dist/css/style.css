@@ -184,10 +184,10 @@ img {
 
 a {
   text-decoration: none;
-  color: #c60813;
+  color: #018E5B;
   transition: 0.2s color ease-out; }
   a:hover {
-    color: #7c050c; }
+    color: #00422a; }
 
 .wrapper {
   max-width: 1230px;
@@ -204,10 +204,10 @@ a {
   padding-bottom: 30px; }
   .page-section--primary {
     color: white;
-    background-color: #c60813; }
+    background-color: #018E5B; }
   .page-section--secondary {
     color: white;
-    background-color: #7c9091; }
+    background-color: #00231A; }
   .page-section--white {
     color: black;
     background-color: #ffffff; }
@@ -316,7 +316,9 @@ p {
 *********************************************************/
 .hero {
   position: relative;
-  height: 550px; }
+  height: 550px;
+  background: url(../img/hero-bg.jpg) center center no-repeat;
+  background-size: cover; }
   .hero--has-overlay:after {
     content: "";
     position: absolute;
@@ -324,15 +326,16 @@ p {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(124, 144, 145, 0.6);
+    background: rgba(0, 35, 26, 0.6);
     z-index: 1; }
   .hero--full-height {
     height: 100vh; }
   .hero--bg-gradient {
-    background-color: #7c9091;
-    background-image: linear-gradient(120deg, #7c9091, #586869); }
+    background-color: #00231A;
+    background-image: linear-gradient(120deg, #00231A, black); }
   .hero__background-image {
-    height: 100%; }
+    height: 100%;
+    background: url("https://images.unsplash.com/photo-1508355991726-ebd81e4802f7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=479fe53b6738f375934d0edab32e1d5d&auto=format&fit=crop&w=1953&q=80") center center no-repeat; }
   .hero__logo {
     width: 1em;
     height: 1em;
@@ -351,7 +354,7 @@ p {
     @media (min-width: 800px) {
       .hero__content {
         margin: 0 auto;
-        max-width: 65%; } }
+        max-width: 50%; } }
   .hero__title {
     font-weight: 300;
     font-size: 30px;
@@ -374,7 +377,7 @@ p {
   padding: 0.5rem 0.625rem;
   font-size: 1rem;
   color: #ffffff;
-  background-color: #c60813;
+  background-color: #018E5B;
   border-radius: 0.125rem;
   text-decoration: none;
   cursor: pointer;
@@ -382,18 +385,18 @@ p {
   .btn:hover, .btn:focus {
     text-decoration: none;
     color: #ffffff;
-    background-color: #7c050c; }
+    background-color: #00422a; }
   .btn--secondary {
-    background-color: #7c9091; }
+    background-color: #00231A; }
     .btn--secondary:hover, .btn--secondary:focus {
-      background-color: #586869; }
+      background-color: black; }
   .btn--transparent {
     color: #ffffff;
     background-color: transparent;
-    border: 2px solid #c60813; }
+    border: 2px solid #018E5B; }
     .btn--transparent:hover, .btn--transparent:focus {
-      background-color: #c60813;
-      border-color: #7c050c; }
+      background-color: #018E5B;
+      border-color: #00422a; }
   .btn--large {
     padding: 0.9375rem 1.5625rem;
     font-size: 1.125rem; }
@@ -451,7 +454,7 @@ textarea {
   input[type='url']:active,
   textarea:focus,
   textarea:active {
-    border-color: #c60813; }
+    border-color: #018E5B; }
 
 textarea {
   max-width: 100%; }
@@ -472,7 +475,7 @@ textarea {
 .loader {
   display: inline-block;
   position: relative;
-  margin: 1.875rem auto;
+  margin: 3.75rem auto;
   width: calc-em(40px);
   height: calc-em(20px);
   vertical-align: middle; }
@@ -490,7 +493,7 @@ textarea {
   top: 0;
   width: 10px;
   height: 20px;
-  background-color: #c60813;
+  background-color: #ffffff;
   -webkit-animation: grow 1.5s linear infinite;
           animation: grow 1.5s linear infinite; }
   @media (min-width: 800px) {
@@ -512,19 +515,19 @@ textarea {
 .loading-text {
   display: inline-block;
   margin-left: 3.125rem;
-  color: #c60813;
-  font-size: 1rem; }
+  color: #ffffff;
+  font-size: 1.2rem; }
   @media (min-width: 800px) {
     .loading-text {
-      font-size: 1.2rem; } }
+      font-size: 2rem; } }
 
 #results {
   margin: 1.875rem auto;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-transform: capitalize; }
   @media (min-width: 800px) {
     #results {
-      font-size: 1.2rem; } }
+      font-size: 2rem; } }
 
 /*********************************************************
     Animations

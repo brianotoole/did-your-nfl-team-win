@@ -1,0 +1,32 @@
+{
+  "name": "didyournflteamwin",
+  "version": "1.0.0",
+  "description": "Fetches from the NFL Live Scores API to check if the inputted team won. Just for fun/learning.",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "NODE_ENV=development webpack --watch",
+    "build": "NODE_ENV=production webpack -p"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "browser-sync": "^2.26.0",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "csv-loader": "^3.0.2",
+    "extract-text-webpack-plugin": "^4.0.0-alpha.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.3",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "xml-loader": "^1.2.1"
+  },
+  "dependencies": {}
+}

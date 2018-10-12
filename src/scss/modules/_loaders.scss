@@ -1,0 +1,50 @@
+/*********************************************************
+    Loaders
+*********************************************************/
+
+.loader {
+  display: inline-block;
+  position: relative;
+  margin: rem(30) auto;
+  width: calc-em(40px);
+  height: calc-em(20px);
+  vertical-align: middle;
+  @media (min-width: $bp_md) {
+    height: 30px;
+  }
+}
+.loader-bars:before,
+.loader-bars:after,
+.loader-bars span {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 20px;
+  background-color: $color-primary;
+  animation: grow 1.5s linear infinite;
+  @media (min-width: $bp_md) {
+    height: 30px;
+  }
+}
+
+.loader-bars:after {
+  left: 15px;
+  animation: grow 1.5s linear -0.5s infinite;
+}
+
+.loader-bars span {
+  left: 30px;
+  animation: grow 1.5s linear -1s infinite;
+}
+.loading-text {
+  display: inline-block;
+  margin-left: rem(50);
+  color: $color-primary;
+  font-size: 1rem;
+  @media (min-width: $bp_md) {
+    font-size: 1.2rem;
+  }
+}
